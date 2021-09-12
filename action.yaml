@@ -4,9 +4,11 @@ inputs:
   who-to-greet:  # id of input
     description: 'Who to greet'
     required: true
-    default: 'World'
+    default: 'Rob'
 runs:
   using: "composite"
   steps:
+    - uses: rajbos/github-action-composite-message@main
+    
     - run: echo Goodbye ${{ inputs.who-to-greet }}.
       shell: bash
